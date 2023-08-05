@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 1 - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio 1</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio 2</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(3)">Mostra Esercizio 3</button>
+        </div>
+        <div class="pt-5 text-center container-md">
+
+            <div id="exercise-1" class="exercise-content">
+                <h3>Esercizio 1</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Crea un file HTML e inserisci un tag script prima della chiusura del body. Poi al suo interno esegui i seguenti passaggi:</p>
+                        <p>&nbsp;&nbsp;dichiara una variabile num1, e assegnale un numero qualsiasi </p>
+                        <p>&nbsp;&nbsp;dichiara una variabile num2, e assegnale un numero qualsiasi </p>
+                        <p>visualizza a schermo “Il valore della variabile num1 e' tot“. Fai la stessa cosa per num2 </p>
+                        <p>&nbsp;&nbsp;dichiara una variabile chiamata stringa, e assegnale come valore una stringa qualsiasi</p>
+                        <p>&nbsp;&nbsp;stampa a schermo “Il valore della variabile stringa e' tot“</p>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Dichiara la variabile 1</span>
+                        <input type="number" class="form-control" id="var1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Il valore della variabile 1: <span id="variabile1-output"></span></h5>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Dichiara la variabile 2</span>
+                        <input type="number" class="form-control" id="var2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Il valore della variabile 2: <span id="variabile2-output"></span></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Il valore della variabile stringa è tot: <span id="somma-output"></span></h5>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div id="exercise-2" class="exercise-content">
+                <h3>Esercizio 2</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Sostituisci il valore della variabile stringa con un qualsiasi altro valore e poi stampalo a schermo. </p>
+                    </div>
+
+                    <h5>Variabile stringa assegnata random: <span id="output-stringa"></span></h5>
+                    <label for="stringa-input">Inserisci il valore della stringa:</label>
+                    <input type="text" id="stringa-input">
+                    <button onclick="updateStringa()">Aggiorna</button>
+                    <div id="output-stringa"></div>
+                </div>
+            </div>
+
+            <div id="exercise-3" class="exercise-content">
+                <h3>Esercizio 3</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Sostituisci il valore della variabile stringa con un qualsiasi altro valore e poi stampalo a schermo. </p>
+                    </div>
+
+                    <h2>ESERCIZIO N° 3</h2>
+                    <h5>Il valore di Pigreco è: <span id="output-pigreco"></span></h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptmain.js"></script>
+    <script src="./script1.js"></script>
+    <script src="./script2.js"></script>
+    <script src="./script3.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
