@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 4 - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio 1</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio 2</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(3)">Mostra Esercizio 3</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(4)">Mostra Esercizio 4</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(5)">Mostra Esercizio 5</button>
+        </div>
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-1" class="exercise-content">
+                <h3>ROLL OF THE DICE</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 1: Scrivi una funzione che simuli un gioco di dadi tra due utenti,
+                            partendo da un
+                            prompt che richieda quanti tiri sono da effettuarsi.</p>
+                        <p>- Stampare il giocatore che ha totalizzato più punti, tenendo conto che:</p>
+                        <p>&nbsp;&nbsp;- ogni dado ha 6 facce</p>
+                        <p>&nbsp;&nbsp;- ogni giocatore tirerà n volte</p>
+                        <p>- Per ogni giocatore:</p>
+                        <p>&nbsp;&nbsp;- generare un numero casuale per ogni tiro che effettuerà</p>
+                        <p>&nbsp;&nbsp;- ed ogni tiro sarà sommato ai precedenti per calcolare il punteggio finale del
+                            giocatore rispettivo.</p>
+                        <p>TIPS:</p>
+                        <p>&nbsp;&nbsp;- Usiamo questa formula per generare un numero random → Math.floor(Math.random()
+                            * (6 - 1 + 1)) + 1;</p>
+                    </div>
+                    <div>
+                        <label for="numTiri">Inserisci il numero di tiri per giocatore:</label>
+                        <input type="number" id="numTiri">
+                        <button onclick="tiraGiocatore(1)">Tira il Giocatore 1</button>
+                        <button onclick="tiraGiocatore(2)">Tira il Giocatore 2</button>
+                        <button onclick="reset()">Reset</button>
+                    </div>
+                    <div>
+                        <label for="scommessaGiocatore1">Scommessa Giocatore 1:</label>
+                        <input type="number" id="scommessaGiocatore1" min="0">
+                        <label for="scommessaGiocatore2">Scommessa Giocatore 2:</label>
+                        <input type="number" id="scommessaGiocatore2" min="0">
+                    </div>
+                    <div>
+                        <h2>Risultati:</h2>
+                        <p>Giocatore 1: <span id="risultatoGiocatore1">0</span></p>
+                        <p>Giocatore 2: <span id="risultatoGiocatore2">0</span></p>
+                        <p>Vincitore: <span id="vincitore"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exercise-2" class="exercise-content">
+                <h3>Fizz , Buzz or FizzBuzz</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 2: Scrivi una funzione che permetta di stampare in console tutti i
+                            numeri da 1 a N</p>
+                        <p>&nbsp;&nbsp;- N dovra’ rappresentare il parametro formale della funzione</p>
+                        <p>&nbsp;&nbsp;- tutti i numeri multipli di 3 siano sostituiti dalla stringa 'Fizz',</p>
+                        <p>&nbsp;&nbsp;- tutti i numeri multipli di 5 siano sostituiti dalla stringa 'Buzz'</p>
+                        <p>&nbsp;&nbsp;- e tutti i numeri multipli di 3 e 5 siano sostituiti dalla stringa 'fizzBuzz'
+                        </p>
+                    </div>
+                    <div>
+                        <label for="maxNumber">Inserisci il numero massimo N:</label>
+                        <input type="number" id="maxNumber">
+                        <button onclick="showFizzBuzz()">Mostra FizzBuzz</button>
+                    </div>
+                    <div id="output"></div>
+                </div>
+            </div>
+
+            <div id="exercise-3" class="exercise-content">
+                <h3>Digit Counter</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 3: Scrivi una funzione che dato un numero intero (massimo 9999)
+                            conti da quante cifre è formato.</p>
+                        <p>&nbsp;&nbsp;Esempio:</p>
+                        <p>&nbsp;&nbsp;Input : 9 → output: 1 cifra</p>
+                        <p>&nbsp;&nbsp;Input : 99 → output: 2 cifre</p>
+                        <p>&nbsp;&nbsp;Input: 12000 → output: Numero troppo grande</p>
+                    </div>
+                    <p>Inserisci un numero (massimo 9999):</p>
+                    <input type="text" id="user-input">
+                    <button onclick="checkInputAndCountDigits()">Conteggia cifre</button>
+                    <p>Il conteggio delle cifre è: <span id="result"></span></p>
+                </div>
+            </div>
+
+            <div id="exercise-4" class="exercise-content">
+                <h3>Vocali Counter</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 4: Scrivi una funzione chiamata contaVocali che prende in input una
+                            stringa e restituisce il numero di vocali presenti nella stringa (ignorando
+                            maiuscole/minuscole).</p>
+                    </div>
+                    <div>
+                        <input type="text" id="inputString" placeholder="Inserisci una stringa">
+                        <button onclick="contaVocali()">Conteggia Vocali</button>
+                        <div id="resultDiv"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exercise-5" class="exercise-content">
+                <h3>Name Power</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 5: Un gruppo di caratteri decidono di fare una battaglia. Aiutali a
+                            capire quale gruppo è il piu forte. Crea una funzione che accetti due stringhe e ritorni
+                            quale delle due è più forte.</p>
+                        <p>&nbsp;&nbsp;Ciascun carattere avrà il proprio potere: A = 1, B = 2, ... Y = 25, Z = 26</p>
+                        <p>&nbsp;&nbsp;Le stringhe saranno solo in maiuscolo</p>
+                        <p>&nbsp;&nbsp;Solo due gruppi posso lottare.</p>
+                        <p>&nbsp;&nbsp;Vince il gruppo la cui potenza totale (A + B + C + ...) è maggiore.</p>
+                        <p>&nbsp;&nbsp;Se le potenze sono uguali, è un pareggio.</p>
+                        <p>&nbsp;&nbsp;Esempi:</p>
+                        <p>&nbsp;&nbsp;"ONE", "TWO" -> "TWO"` </p>
+                        <p>&nbsp;&nbsp;"ONE", "NEO" -> "Pareggio!"</p>
+                    </div>
+                    <div>
+                        <label for="gruppo1">Inserisci il primo gruppo:</label>
+                        <input type="text" id="gruppo1" placeholder="Inserisci il primo gruppo" />
+                    </div>
+                    <div>
+                        <label for="gruppo2">Inserisci il secondo gruppo:</label>
+                        <input type="text" id="gruppo2" placeholder="Inserisci il secondo gruppo" />
+                    </div>
+                    <button onclick="confrontaGruppi()">Confronta gruppi</button>
+                    <p id="risultato"></p>
+                    <p id="potenzaGruppo1"></p>
+                    <p id="potenzaGruppo2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptmain.js"></script>
+    <script src="./script1.js"></script>
+    <script src="./script2.js"></script>
+    <script src="./script3.js"></script>
+    <script src="./script4.js"></script>
+    <script src="./script5.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
