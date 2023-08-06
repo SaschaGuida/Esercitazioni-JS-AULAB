@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 10 - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio 1</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio 2</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(3)">Mostra Esercizio 3</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(4)">Mostra Esercizio 4</button>
+            <!-- <button class="mostra-esercizio-button" onclick="mostraEsercizio(5)">Mostra Esercizio 5</button> -->
+        </div>
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-1" class="exercise-content">
+                <!-- Titolo Traccia -->
+                <h3>INCREASING OR DECREASING</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 1: Scrivi un programma che dato un array di 10 numeri interi
+                            ordinati in modo casuale li riordini:</p>
+                        <p>- In modo decrescente.</p>
+                        <p>&nbsp;&nbsp;- In modo crescente.</p>
+                        <p>&nbsp;&nbsp;Esempio:</p>
+                        <p>Input: array = [3, 7, -2, 5, 8, 1, 2, 5, 6, -4]</p>
+                        <p>&nbsp;&nbsp;Output: [8, 7, 6, 5, 3, 2, 1, -2, -4]</p>
+                        <p>&nbsp;&nbsp;TIP: L’oggetto array mette a disposizione il metodo sort.</p>
+                    </div>
+                    <!-- div per gli esercizi -->
+                    <div>
+                        <label>Inserisci 10 numeri separati da virgola:</label>
+                        <input type="text" id="inputArray" />
+                        <button onclick="sortArray()">Ordina</button>
+                    </div>
+                    <div id="outputDiv">
+                        <h3>Array ordinato in modo crescente:</h3>
+                        <p id="ascendingOutput"></p>
+                        <h3>Array ordinato in modo decrescente:</h3>
+                        <p id="descendingOutput"></p>
+                    </div>
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+
+            <div id="exercise-2" class="exercise-content">
+                <!-- Titolo traccia -->
+                <h3>Average</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Scrivi un programma che dato un array di numeri, calcoli la media dei
+                            valori e restituisca in output:</p>
+                        <p>&nbsp;&nbsp;- la media</p>
+                        <p>&nbsp;&nbsp;- tutti i valori minori della media</p>
+                        <p>&nbsp;&nbsp;Esempio:</p>
+                        <p>&nbsp;&nbsp;Input ⇒ a = [3, 5, 10, 2, 8]</p>
+                        <p>&nbsp;&nbsp;Output ⇒ media = 5.6, valori minori = [3, 5, 2]</p>
+                    </div>
+                    <!-- div per gli esercizi -->
+
+                    <div id="inputDiv">
+                        <p>Inserisci una lista di numeri separati da una virgola (es. 3, 5, 10, 2, 8):</p>
+                        <input type="text" id="inputNumbers">
+                        <button onclick="calcolaMediaValori()">Calcola</button>
+                    </div>
+                    <div id="outputDiv">
+                        <p>Media : <span id="mediaOutput"></span></p>
+                        <p>Valori minori della media: <span id="valoriMinoriOutput"></span> </p>
+                    </div>
+
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+
+            <div id="exercise-3" class="exercise-content">
+                <!-- Titolo traccia -->
+                <h3>Palindrome or non-palindrome</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 3: Scrivi una funzione che prenda in input una stringa e
+                            restituisca TRUE se è palindroma, FALSE se non lo è.</p>
+                        <p>&nbsp;&nbsp;TIP: Puoi eliminare spazi e segni di punteggiatura usando ⇒ str.replace(/\\W/g,
+                            "")</p>
+                    </div>
+                    <!-- div per gli esercizi -->
+                    <div>
+                        <label for="inputString2">Inserisci una frase o parola:</label>
+                        <input type="text" id="inputString2">
+                        <button id="checkButton2">Verifica</button>
+                    </div>
+                    <div id="outputDiv2">
+
+                    </div>
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+
+            <div id="exercise-4" class="exercise-content">
+                <!-- Titolo traccia -->
+                <h3>High, very high</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Traccia 4: Crea una funzione che prenda in input una array di numeri e
+                            restituisca i due numeri più alti all'interno dell'array.
+                            Il valore restituito dovrà essere un array nel formato [seconda età più vecchia, età più
+                            vecchia].
+                            L'ordine dei numeri passati potrebbe essere qualsiasi e includerà sempre almeno 2 elementi.
+                        </p>
+                        <p>&nbsp;&nbsp;Esempi:</p>
+                        <p>&nbsp;&nbsp;[1, 2, 10, 8] -> [8, 10]</p>
+                        <p>&nbsp;&nbsp;[1, 5, 87, 45, 8, 8] -> [45, 87] </p>
+                        <p>&nbsp;&nbsp;[1, 3, 10, 0] -> [3, 10]</p>
+
+                    </div>
+                    <!-- div per gli esercizi -->
+                    <div>
+                        <label for="inputArray">Inserisci un array di numeri separati da virgola:</label>
+                        <input type="text" id="inputArray">
+                        <button onclick="findTwoHighest()">Trova i due numeri più alti</button>
+                    </div>
+                    <div id="outputResult"></div>
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+
+            <!-- <div id="exercise-5" class="exercise-content">
+                - Titolo traccia
+                <h3>Name Power</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info"></p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;</p>
+                    </div>
+                - div per gli esercizi
+                    <div>
+                        <label for="gruppo1">Inserisci il primo gruppo:</label>
+                        <input type="text" id="gruppo1" placeholder="Inserisci il primo gruppo" />
+                    </div>
+                    <div>
+                        <label for="gruppo2">Inserisci il secondo gruppo:</label>
+                        <input type="text" id="gruppo2" placeholder="Inserisci il secondo gruppo" />
+                    </div>
+                    <button onclick="confrontaGruppi()">Confronta gruppi</button>
+                    <p id="risultato"></p>
+                    <p id="potenzaGruppo1"></p>
+                    <p id="potenzaGruppo2"></p>
+                - fine div per gli esercizi
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptmain.js"></script>
+    <script src="./script1.js"></script>
+    <script src="./script2.js"></script>
+    <script src="./script3.js"></script>
+    <script src="./script4.js"></script>
+    <!-- <script src="./script5.js"></script> -->
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
