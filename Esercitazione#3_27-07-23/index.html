@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 8 - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio 1</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio 2</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(3)">Mostra Esercizio 3</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(4)">Mostra Esercizio 4</button>
+        </div>
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-1" class="exercise-content">
+                <h3>Calcolatore Gatti in fila</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Crea due variabili, una che contiene il numero totale dei gatti e una che
+                            contiene il numero dei gatti in fila. Scrivi quindi un programma che calcoli: </p>
+                        <p>&nbsp;&nbsp;- Il numero di file risultanti</p>
+                        <p>&nbsp;&nbsp;- Il numero di gatti mancanti per completare una nuova fila</p>
+                        <p>- Quanti gatti rimangono fuori In seguito</p>
+                        <p>&nbsp;&nbsp;Stampa in console la frase “Ci sono X file di gatti e ne mancano Y per una nuova
+                            fila, con un avanzo di Z”</p>
+                    </div>
+
+                    <label for="numeroGatti">Inserisci il numero totale di gatti:</label>
+                    <input type="number" id="numeroGatti" placeholder="Numero totale di gatti">
+
+                    <label for="gattiPerFila">Inserisci il numero di gatti per ogni fila:</label>
+                    <input type="number" id="gattiPerFila" placeholder="Numero di gatti per fila">
+
+                    <button onclick="calcolaFileGatti()">Calcola</button>
+
+                    <p id="risultato"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-2" class="exercise-content">
+                <h3>Convertitore Voti in Giudizio</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Scrivi un programma che converta un voto numerico (v) in un giudizio
+                            seguendo questi parametri:</p>
+                        <p>&nbsp;&nbsp;- se v é minore di 18, stampare in console “insufficiente”</p>
+                        <p>&nbsp;&nbsp;- se v é maggiore uguale a 18 e minore di 21, stampare in console “sufficiente”
+                        </p>
+                        <p>&nbsp;&nbsp;- se v é maggiore uguale a 21 e minore di 24, stampare in console: “buono”</p>
+                        <p>&nbsp;&nbsp;- se v é maggiore uguale a 24 e minore di 27, stampare in console: “distinto”</p>
+                        <p>&nbsp;&nbsp;- se v é maggiore uguale a 27 e minore uguale 29, stampare in console: “ottimo”
+                        </p>
+                        <p>&nbsp;&nbsp;- se v é uguale a 30, stampare in console: “eccellente”</p>
+                    </div>
+                    <input type="number" id="voto" placeholder="Inserisci il voto">
+
+                    <button onclick="converteVoto()">Giudizio Divino</button>
+
+                    <p id="giudizio"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-3" class="exercise-content">
+                <h3>Che tempo fa?</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Scrivi un programma che converta una temperatura inserita dall’utente con
+                            una delle seguenti descrizioni, stampate in console:</p>
+                        <p>&nbsp;&nbsp;- se temperatura é minore di 20, stampare “non ci sono piu’ le mezze stagioni”
+                        </p>
+                        <p>&nbsp;&nbsp;- se temperatura é maggiore uguale a 30, stampare “lu mare, lu sule, lu ientu”
+                        </p>
+                        <p>&nbsp;&nbsp;- se temperatura é minore di 30, stampare “mi dia una peroni sudata”</p>
+                        <p>&nbsp;&nbsp;- se temperatura é minore di 0, stampare “non e’ tanto il freddo quanto
+                            l’umidità’”</p>
+                        <p>&nbsp;&nbsp;- se temperatura é minore di -10, stampare “copriti…ancora ti raffreddi”</p>
+                    </div>
+
+                    <label for="temperatura">Inserisci la temperatura:</label>
+                    <input type="number" id="temperatura" placeholder="Inserisci la temperatura">
+
+                    <button onclick="convertiTemperatura()">Che tempo fa?</button>
+
+                    <p id="descrizione"></p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-4" class="exercise-content">
+                <h3>Che anno è?</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Verifica se un numero è un anno bisestile utilizzando if-else</p>
+                        <p>&nbsp;&nbsp;Per capire se un anno è bisestile occorre verificare se è un multiplo di 4,
+                            facendo però attenzione agli anni secolari.
+                            Dato un qualsiasi anno, per capire se si tratta di un anno bisestile procederemo nel modo
+                            seguente:</p>
+                        <p>&nbsp;&nbsp;- se è un anno secolare, allora è un anno bisestile solo se è divisibile per 400;
+                        </p>
+                        <p>&nbsp;&nbsp;- se è un anno non secolare, tale anno è bisestile se è divisibile per 4.</p>
+                        <p>&nbsp; Gli anni secolari sono quegli anni che stabiliscono la fine di un secolo, ossia quegli
+                            anni che terminano con almeno una coppia di zeri. Tra tali anni sono bisestili per
+                            convenzione solamente quelli divisibili per 400, ossia quelli per cui le cifre che precedono
+                            i due 00 sono divisibili per 4.</p>
+                    </div>
+                    <div>
+                        <label for="anno">Inserisci un anno:</label>
+                        <input type="number" id="anno" placeholder="Inserisci un anno">
+
+                        <button onclick="verificaAnnoBisestile()">Verifica la bisestilità</button>
+
+                        <p id="esito"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptmain.js"></script>
+    <script src="./script1.js"></script>
+    <script src="./script2.js"></script>
+    <script src="./script3.js"></script>
+    <script src="./script4.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
