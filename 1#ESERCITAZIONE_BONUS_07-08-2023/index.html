@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1# BONUS - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio #1 Bonus</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio #2 Bonus</button>
+        </div>
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-1" class="exercise-content">
+                <h3>BONUS WITH NUMBER ARRAY</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info"> </p>
+                        <p>&nbsp;&nbsp;1. Scrivi un programma che sommi tutti gli elementi di un array. </p>
+                        <p>&nbsp;&nbsp;2. Scrivi un programma che trovi il valore massimo in un array. </p>
+                        <p>&nbsp;&nbsp;3. Scrivi un programma che trovi il valore minimo in un array. </p>
+                        <p>&nbsp;&nbsp;4. Scrivi un programma che calcoli la media degli elementi in un array. </p>
+                        <p>&nbsp;&nbsp;5. Scrivi un programma che trovi il numero di elementi pari in un array. </p>
+                        <p>&nbsp;&nbsp;6. Scrivi un programma che trovi il numero di elementi dispari in un array. </p>
+                        <p>&nbsp;&nbsp;7. Scrivi un programma che inverte l'ordine degli elementi in un array. </p>
+                        <p>&nbsp;&nbsp;8. Scrivi un programma che trovi la somma dei numeri primi in un array. </p>
+                        <p>&nbsp;&nbsp;9. Scrivi un programma che ordini un array in ordine crescente. </p>
+                        <p>&nbsp;&nbsp;10. Scrivi un programma che ordini un array in ordine decrescente. </p>
+                        <p>&nbsp;&nbsp;11. Scrivi un programma che calcoli la differenza tra il valore massimo e il
+                            valore minimo in un array. </p>
+                        <p>&nbsp;&nbsp;12. Scrivi un programma che rimuova tutti gli zeri da un array. </p>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="inputArray" type="text" placeholder="Inserisci i numeri separati da virgole"
+                                    class="text-center">
+                                <div class="button-group">
+                                    <button class="btn btn-primary" onclick="calculateSum()">Calcola la somma</button>
+                                    <button class="btn btn-primary" onclick="findMax()">Trova il massimo</button>
+                                    <button class="btn btn-primary" onclick="findMin()">Trova il minimo</button>
+                                    <button class="btn btn-primary" onclick="calculateAverage()">Calcola la
+                                        media</button>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-primary" onclick="countEven()">Conta i numeri pari</button>
+                                    <button class="btn btn-primary" onclick="countOdd()">Conta i numeri dispari</button>
+                                    <button class="btn btn-primary" onclick="reverseArray()">Inverti l'array</button>
+                                    <button class="btn btn-primary" onclick="sumPrimes()">Somma i numeri primi</button>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-primary" onclick="sortAscending()">Ordina in modo
+                                        crescente</button>
+                                    <button class="btn btn-primary" onclick="sortDescending()">Ordina in modo
+                                        decrescente</button>
+                                    <button class="btn btn-primary" onclick="calculateDifference()">Calcola la
+                                        differenza</button>
+                                    <button class="btn btn-primary" onclick="removeZeros()">Rimuovi gli zeri</button>
+                                </div>
+                                <div id="result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exercise-2" class="exercise-content">
+                <h3>BONUS WITH LETTER ARRAY</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info"> </p>
+                        <p>&nbsp;&nbsp;1. Scrivi un programma che verifichi se un dato elemento è presente in un array.
+                        </p>
+                        <p>&nbsp;&nbsp;2. Scrivi un programma che conti quante volte un dato elemento appare in un
+                            array. </p>
+                        <p>&nbsp;&nbsp;3. Scrivi un programma che rimuova tutti gli elementi duplicati da un array. </p>
+                        <p>&nbsp;&nbsp;4. Scrivi un programma che copi gli elementi di un array in un altro array. </p>
+                        <p>&nbsp;&nbsp;5. Scrivi un programma che rimuova un elemento specifico da un array. </p>
+                        <p>&nbsp;&nbsp;6. Scrivi un programma che inverta l'ordine di ciascuna parola in un array di
+                            stringhe. </p>
+                        <p>&nbsp;&nbsp;7. Scrivi un programma che trovi la lunghezza della parola più lunga in un array
+                            di stringhe. </p>
+                        <p>&nbsp;&nbsp;8. Scrivi un programma che trovi la moda (valore più frequente) in un array. </p>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="container">
+                                    <div id="inputDiv2">
+                                        <label for="inputArray">Inserisci gli elementi dell'array separati da
+                                            virgole:</label><br>
+                                        <input type="text" id="inputArray2" placeholder="es. a, b, c"><br>
+                                        <label for="inputElement2">Inserisci l'elemento da verificare:</label><br>
+                                        <input type="text" id="inputElement2" placeholder="es. a"><br>
+                                    </div>
+
+                                    <div class="button-group">
+                                        <button class="btn btn-primary" onclick="checkElement()">Verifica la presenza
+                                            dell'elemento</button>
+                                        <button class="btn btn-primary" onclick="countElementOccurrences()">Conta le
+                                            occorrenze
+                                            dell'elemento</button>
+                                        <button class="btn btn-primary" onclick="removeDuplicates()">Rimuovi
+                                            duplicati</button>
+                                        <button class="btn btn-primary" onclick="copyArray()">Copia array</button>
+                                    </div>
+
+                                    <div class="button-group">
+                                        <button class="btn btn-primary" onclick="removeSpecificElement()">Rimuovi
+                                            elemento specifico</button>
+                                        <button class="btn btn-primary" onclick="reverseWords()">Inverti parole</button>
+                                        <button class="btn btn-primary" onclick="findLongestWord()">Trova la parola più
+                                            lunga</button>
+                                        <button class="btn btn-primary" onclick="findMode()">Trova la moda</button>
+                                    </div>
+
+                                    <div id="result2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./scriptmain.js"></script>
+    <script src="./script1.js"></script>
+    <script src="./script2.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
