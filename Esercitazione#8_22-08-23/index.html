@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 16 - Esercitazione JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="exercise-container container">
+        <div class="d-flex justify-content-center py-3">
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(1)">Mostra Esercizio 1</button>
+            <button class="mostra-esercizio-button" onclick="mostraEsercizio(2)">Mostra Esercizio 2</button>
+        </div>
+        <div class="pt-5 text-center container-md">
+            <div id="exercise-1" class="exercise-content">
+                <!-- Titolo Traccia -->
+                <h3>Countdown</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Crea una pagina html con le seguenti caratteristiche:</p>
+                        <p>&nbsp;&nbsp;- crea un input dove potrai inserire un tot di secondi.</p>
+                        <p>&nbsp;&nbsp;- un pulsante che, al click, farà partire un countdown (dai secondi selezionati a
+                            zero)</p>
+                        <p>&nbsp;&nbsp;- un pulsante che, al click, mettera' in pausa il countdown.</p>
+                        <p>&nbsp;&nbsp;- un pulsante che, al click, pulirà l’input e azzererà il countdown</p>
+                        <p>&nbsp;&nbsp;EXTRA: se il timer viene stoppato (non azzerato), il click sul tasto di avvio
+                            fara' riprendere il timer da quel punto</p>
+                    </div>
+                    <!-- div per gli esercizi -->
+
+                    <div>
+                        <input type="number" id="secondsInput" placeholder="Inserisci secondi">
+                        <button onclick="startCountdown()">Avvia</button>
+                        <button onclick="pauseCountdown()">Pausa</button>
+                        <button onclick="resetCountdown()">Azzera</button>
+                    </div>
+                    <div id="display">0</div>
+
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+
+            <div id="exercise-2" class="exercise-content">
+                <!-- Titolo traccia -->
+                <h3>Telephone Book</h3>
+                <div id="ex_templ">
+                    <div class="code-block mb-5">
+                        <p class="text-info">Crea una rubrica contenente una lista di contatti e con le seguenti
+                            funzionalità:</p>
+                        <p>&nbsp;&nbsp;- Mostrare o nascondere la lista dei contatti</p>
+                        <p>&nbsp;&nbsp;- Popolare la tabella con i contatti presenti nell’array di partenza</p>
+                        <p>&nbsp;&nbsp;- Aggiungere un nuovo contatto</p>
+                        <p>&nbsp;&nbsp;- Eliminare un contatto in rubrica</p>
+                        <p>&nbsp;&nbsp;- Modificare un contatto presente in rubrica</p>
+                    </div>
+                    <!-- div per gli esercizi -->
+
+                    <div class="container">
+                        <div class="header">
+                            <h1>Rubrica</h1>
+                        </div>
+                        <div class="form">
+                            <input type="text" id="nome" placeholder="Nome">
+                            <input type="text" id="cognome" placeholder="Cognome">
+                            <input type="text" id="numero" placeholder="Numero di Telefono">
+                            <input type="text" id="email" placeholder="Email">
+                            <input type="text" id="indirizzo" placeholder="Indirizzo">
+                            <input type="text" id="soprannome" placeholder="Soprannome">
+                            <button onclick="aggiungiOModificaContatto()">Aggiungi/Modifica</button>
+                            <button onclick="mostraRicerca()">Cerca</button>
+                            <button onclick="toggleListaContatti()">Nascondi/Mostra Contatti</button>
+
+                        </div>
+                        <div class="ricerca-contatto" style="display:none;">
+                            <label><input type="radio" name="campo-ricerca" value="nome"> Nome</label>
+                            <label><input type="radio" name="campo-ricerca" value="cognome"> Cognome</label>
+                            <input type="text" id="valore-ricerca" placeholder="Inserisci il valore">
+                            <button onclick="effettuaRicerca()">Ricerca</button>
+                            <button onclick="nascondiRicerca()">Annulla</button>
+                        </div>
+                        <div class="lista-contatti">
+                            <!-- Qui appariranno i contatti -->
+                        </div>
+                    </div>
+
+                    <!-- fine div per gli esercizi -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="scriptmain.js"></script>
+    <script src="countdown.js"></script>
+    <script src="tpbook.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+|￣￣￣￣￣￣￣ |  
+|Sascha-WebDev|
+|＿＿＿＿＿ _＿_|
+(\__/) || 
+(•ㅅ•) || 
+/ 　 づ
+-->
